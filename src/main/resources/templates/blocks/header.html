@@ -1,0 +1,23 @@
+<div th:fragment="header">
+  <header>
+      <div class="container">
+          <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+              <a th:href="@{/}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-tree"
+                       viewBox="0 0 16 16">-->
+                      <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
+                  </svg>
+                  <span class="fs-4">&nbsp;Магазин новогодних товаров</span>
+              </a>
+
+              <ul class="nav nav-pills">
+                  <li class="nav-item"><a th:href="@{/}" th:class="${#httpServletRequest.requestURI} == @{'/'} ? 'nav-link active' : 'nav-link'" >Главная</a></li>
+                  <li class="nav-item"><a th:href="@{/allItems}" th:class="${#httpServletRequest.requestURI.contains('allItems')}  ? 'nav-link active' : 'nav-link'">Товары</a></li>
+                  <li class="nav-item"><a th:href="@{/addItem}" th:class="${#httpServletRequest.requestURI} == @{'/addItem'} ? 'nav-link active' : 'nav-link'">Добавить товар</a></li>
+                  <li class="nav-item"><a th:href="@{/orders}" th:class="${#httpServletRequest.requestURI} == @{'/orders'} ? 'nav-link active' : 'nav-link'">Заказы</a></li>
+                  <li class="nav-item"><a th:href="@{/history}" th:class="${#httpServletRequest.requestURI} == @{'/history'} ? 'nav-link active' : 'nav-link'">История заказов</a></li>
+              </ul>
+          </header>
+      </div>
+  </header>
+</div>

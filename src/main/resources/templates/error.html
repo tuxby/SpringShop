@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <head th:insert="blocks/head :: head"></head>
+</head>
+
+<body class="bg-light">
+
+<header th:insert="blocks/header :: header"></header>
+
+<main class="container">
+  <div class="bg-light p-5 rounded">
+    <h1>Произошла ошибка</h1>
+    <p class="lead">Возможно, запрашиваемая страница либо функция, находится в разработке.</p>
+    <a class="btn btn-lg btn-primary" href="@{/} role="button">Перейти на главную &raquo;</a>
+  </div>
+</main>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <head th:insert="blocks/head :: head"></head>
+</head>
+
+<body class="bg-light">
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+  <main>
+    <div class="py-3 text-center">
+<!--      <img class="d-block mx-auto mb-4" src="https://icons.getbootstrap.com/assets/icons/box-arrow-in-down.svg" alt="" width="72" height="57">-->
+      <h2>Изменение товара</h2>
+      <!-- <p class="lead">Заполните поля и нажминте кнопку Добавить</p>-->
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data" class="needs-validation">
+          <hr class="row g-3">
+            <div class="col-12">
+              <label class="form-label">Наименование</label>
+              <input type="text" name="name" class="form-control" placeholder="Введите имя товара" th:value="${model.getName()}">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Описание</label>
+              <input type="text" name="disc" class="form-control" placeholder="Введите описание товара" th:value="${model.getDisc()}">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Цена</label>
+              <input type="number" name="price" class="form-control" placeholder="Введите цену товара" th:value="${model.getPrice()}">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Вес</label>
+              <input type="number" name="weight" class="form-control" placeholder="Введите вес товара" th:value="${model.getWeight()}">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Файл изображения</label>
+              <input type="file" name="url" class="form-control" placeholder="Ссылка на картинку"  th:value="${model.getUrl()}">
+            </div>
+
+<!--            <div class="col-12">-->
+<!--              <label class="form-label">Категория товара</label>-->
+<!--              <select type="text" name="type" class="form-select"   th:value="${model.getType()}">-->
+<!--                <option value="PRESENTS">Подарок</option>-->
+<!--                <option value="TOYS">Игрушка</option>-->
+<!--                <option value="DECORATIONS">Украшение</option>-->
+<!--                <option value="LIGHTS">Гирлянда</option>-->
+<!--                <option value="CHRISTMAS_TREES">Ёлка</option>-->
+<!--              </select>-->
+<!--            </div>-->
+            <div class="col-12">
+              <label class="form-label">Категория товара</label>
+              <select type="text" name="type" class="form-select">
+                <option th:each="i:${model.getType().values()}" th:value="${i}" th:text="${i.ruValue}" th:selected="${i.ruValue==model.getType().ruValue}">
+                </option>
+              </select>
+            </div>
+<!--          -->
+<!--          <select>-->
+<!--            <option th:each="i:${model.getType().values()}" th:value="${i}" th:text="${i.ruValue}" th:selected="${i.ruValue==model.getType().ruValue}">-->
+<!--            </option>-->
+<!--          </select>-->
+
+          <hr class="my-4">
+            <div class="btn-group">
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Сохранить</button>
+              <button th:href="@{/detailItem/}+${model.getId()}" class="btn btn-sm btn-primary">Вернуться к товару</button>
+            </div>
+          </hr>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+  <footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <head th:insert="blocks/head :: head"></head>
+</head>
+
+<body class="bg-light">
+
+<header th:insert="blocks/header :: header"></header>
+
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Магазин новогодних товаров</h1>
+                <p class="lead text-muted">Здесь вы можете купить все, чтобы сделать ваш новый год незабываемым</p>
+                <p>
+                    <a th:href="@{/addItem}" class="btn btn-primary my-2">Добавить товар</a>
+                    <a th:href="@{/allItems}" class="btn btn-secondary my-2">Просмотр товаров</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>

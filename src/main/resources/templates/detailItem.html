@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <head th:insert="blocks/head :: head"></head>
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<p>
+
+<div class="container py-3 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+
+<div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-0">
+    <div class="col-sm-6 col-md-8">
+        <div class="bg-light text-center overflow-hidden main h-100">
+            <div>
+                <h1 class="display-6" th:text="${model.getName()}"></h1>
+            </div>
+            <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 80%; border-radius: 21px 21px 0 0;">
+                <div class="row p-3">
+                    <div class="col p-3">
+                        <img class="img-fluid img-thumbnail" th:src="${model.getUrl()}">
+                    </div>
+                    <div class="col p-3 text-start">
+                        <h6>Описание:</h6>
+                        <p class="border-bottom" th:text="${model.getDisc()}">
+                        <h6>Категория:</h6>
+                        <p class="border-bottom" th:text="${model.getType().ruValue}">
+                        <h6>Вес:</h6>
+                        <p class="border-bottom" th:text="${model.getWeight()}">
+                        <h6>Цена:</h6>
+                        <p><h4 th:text="${model.getPrice()}+' руб.'"></h4>
+                        <p>
+                        <p class="text-muted" th:text="${model.getUsdPrice()}">
+                        <p class="text-muted border-bottom" th:text="${model.getEurPrice()}">
+                    </div>
+                </div>
+                <a th:href="@{/edit/}+${model.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Изменить</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-4">
+        <div class="bg-light text-center overflow-hidden main h-100">
+            <h1 class="display-6">Сделать заказ</h1>
+            <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 80%; border-radius: 21px 21px 0 0;">
+                <form method="post" >
+                    <div class="row">
+                        <div class="col p-5 mb-3 text-start">
+                            <label class="form-label">Имя</label>
+                            <input type="text" name="name" class="form-control" placeholder="Введите ваше имя"></input>
+
+                            <label class="form-label">Контактный телефон</label>
+                            <input type="text" name="contact" class="form-control" placeholder="Введите номер телефона"></input>
+
+                            <button class="btn btn-primary my-2" type="submit">Заказать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>

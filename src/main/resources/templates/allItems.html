@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <head th:insert="blocks/head :: head"></head>
+</head>
+
+<body class="bg-light">
+
+<header th:insert="blocks/header :: header"></header>
+<main>
+    <ul class="nav nav-pills justify-content-center" >
+        <li class="nav-item"><a th:href="@{/allItems}" th:class="${#httpServletRequest.requestURI} == @{'/allItems'} ? 'btn btn-sm btn-outline-secondary active' : 'btn btn-sm btn-outline'" >Все</a></li>
+        <li class="nav-item"><a th:href="@{/allItems/trees}" th:class="${#httpServletRequest.requestURI} == @{'/allItems/trees'} ? 'btn btn-sm btn-outline-secondary active' : 'btn btn-sm btn-outline'" >Елки</a></li>
+        <li class="nav-item"><a th:href="@{/allItems/toys}" th:class="${#httpServletRequest.requestURI} == @{'/allItems/toys'} ? 'btn btn-sm btn-outline-secondary active' : 'btn btn-sm btn-outline'">Игрушки</a></li>
+        <li class="nav-item"><a th:href="@{/allItems/decor}" th:class="${#httpServletRequest.requestURI} == @{'/allItems/decor'} ? 'btn btn-sm btn-outline-secondary active' : 'btn btn-sm btn-outline'">Украшения</a></li>
+        <li class="nav-item"><a th:href="@{/allItems/garland}" th:class="${#httpServletRequest.requestURI} == @{'/allItems/garland'} ? 'btn btn-sm btn-outline-secondary active' : 'btn btn-sm btn-outline'">Гирлянды</a></li>
+        <li class="nav-item"><a th:href="@{/allItems/gift}" th:class="${#httpServletRequest.requestURI} == @{'/allItems/gift'} ? 'btn btn-sm btn-outline-secondary active' : 'btn btn-sm btn-outline'">Подароки</a></li>
+    </ul>
+
+    <div class="album py-5 bg-light">
+        <div class="container" >
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+            <div class="col" th:each="i:${list}">
+                <div class="card shadow-sm">
+<!--                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" th:src="${i.getUrl()}"/>-->
+                    <a th:href="@{/detailItem/}+${i.getId()}">
+                        <img class="img-fluid rounded mx-auto d-block" width="100%" height="225px" th:src="${i.getUrl()}"/>
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text" th:text="${i.getName()}"></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a th:href="@{/detailItem/}+${i.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Просмотр</a>
+                                <a th:href="@{/edit/del/}+${i.getId()}" type="button" class="btn btn-sm btn-outline-secondary">Удалить</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</main>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>
