@@ -1,4 +1,4 @@
-<h3>SpringShop - простой пример иинтернет-магазина<h3>
+<h2>SpringShop - простой пример иинтернет-магазина<h2>
 
 Demo version of the application is available at:<br>
 https://tuxxx.ddns.net/springshop/ <br>
