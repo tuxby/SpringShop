@@ -3,6 +3,8 @@
 Demo version of the application is available at:<br>
 https://tuxxx.ddns.net/springshop/ <br>
 https://8868598.ddns.net/springshop/
+  
+  ----------------------------------
 
 ![1.png](screenshots%2F1.png)
 ![2.png](screenshots%2F2.png)
