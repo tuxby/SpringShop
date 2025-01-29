@@ -2,7 +2,6 @@
 
 Demo version of the application is available at:<br>
 https://java.of.by/springshop/ <br>
-https://8868598.ddns.net/springshop/
   
   ----------------------------------
 
