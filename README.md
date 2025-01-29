@@ -1,7 +1,7 @@
 <h2>SpringShop - простой пример иинтернет-магазина<h2>
 
 Demo version of the application is available at:<br>
-https://tuxxx.ddns.net/springshop/ <br>
+https://java.of.by/springshop/ <br>
 https://8868598.ddns.net/springshop/
   
   ----------------------------------
